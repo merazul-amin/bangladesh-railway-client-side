@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import { FiAlignJustify, FiCrosshair, IconName } from "react-icons/fi";
+import { FiAlignJustify } from "react-icons/fi";
 import { ImCross } from "react-icons/im";
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
     return (
         <>
-            <div className='shadow-lg'>
+            <div className='shadow-lg bg-white'>
                 <div className='lg:w-[90%] mx-auto h-[80px] flex align-middle relative'>
                     {/* two div for logo and nav links */}
 
@@ -40,14 +40,7 @@ const Navbar = () => {
                                 :
                                 <FiAlignJustify onClick={() => setIsOpen(true)} className='text-3xl cursor-pointer'></FiAlignJustify>
                         }
-
-
-
-
                     </div>
-
-
-
                 </div>
             </div>
 
@@ -56,11 +49,11 @@ const Navbar = () => {
 
             <div className={`lg:hidden w-full mt-[80px] absolute ${isOpen ? `top-0` : `top-[-500px]`} duration-500`}>
                 <ul className='text-white font-bold '>
-                    <li className='bg-green-500 block mb-[1px] p-5'><NavLink to='/'>Home</NavLink></li>
-                    <li className='bg-green-500 w-full mb-[1px] p-5'><NavLink to='/'>Login</NavLink></li>
-                    <li className='bg-green-500 w-full mb-[1px] p-5'><NavLink to='/'>Register</NavLink></li>
-                    <li className='bg-green-500 w-full mb-[1px] p-5'><NavLink to='/'>Train Information</NavLink></li>
-                    <li className='bg-green-500 w-full mb-[1px] p-5'><NavLink to='/'>Contact Us</NavLink></li>
+                    <li className='bg-green-600 block mb-[1px] p-5'><NavLink to='/'>Home</NavLink></li>
+                    <li className='bg-green-600 w-full mb-[1px] p-5'><NavLink to='/'>Login</NavLink></li>
+                    <li className='bg-green-600 w-full mb-[1px] p-5'><NavLink to='/'>Register</NavLink></li>
+                    <li className='bg-green-600 w-full mb-[1px] p-5'><NavLink to='/'>Train Information</NavLink></li>
+                    <li className='bg-green-600 w-full mb-[1px] p-5'><NavLink to='/'>Contact Us</NavLink></li>
                 </ul>
             </div>
         </>

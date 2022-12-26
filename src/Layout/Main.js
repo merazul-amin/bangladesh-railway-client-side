@@ -7,7 +7,9 @@ const Main = () => {
     return (
         <div>
             <Navbar></Navbar>
-            <Outlet></Outlet>
+            <div className='-z-5'>
+                <Outlet></Outlet>
+            </div>
             <Footer></Footer>
         </div>
     );
