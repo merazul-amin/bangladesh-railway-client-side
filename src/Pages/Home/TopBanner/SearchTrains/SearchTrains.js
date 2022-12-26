@@ -14,7 +14,7 @@ const SearchTrains = () => {
 
 
     return (
-        <form onSubmit={handleSubmit(onSubmit)} className='w-[95%] lg:mt-10 mx-auto'>
+        <form onSubmit={handleSubmit(onSubmit)} className='w-[95%] lg:mt-12 mx-auto'>
             <div className=''>
                 <div>
                     <h1>From</h1>
@@ -31,11 +31,11 @@ const SearchTrains = () => {
 
 
             <div className=''>
-                <div className='relative'>
+                <div className=''>
                     <h1>Date of Journey</h1>
                     <input type='date' className='input h-8 rounded-md input-bordered input-info w-[99%] mx-auto' placeholder='Pick A Date' />
 
-                    <div className={`absolute bg-white ${isOpen ? `block` : 'hidden'}`}>
+                    {/* <div className={`absolute bg-white ${isOpen ? `block` : 'hidden'}`}>
                         <DayPicker
                             mode="single"
                             selected={selectedDate}
@@ -44,7 +44,7 @@ const SearchTrains = () => {
                                 caption: { color: 'white', backgroundColor: 'green' }
                             }}
                         />
-                    </div>
+                    </div> */}
                 </div>
                 <div>
                     <h1>Choose Class</h1>
@@ -60,8 +60,8 @@ const SearchTrains = () => {
 
             <br />
 
-            <button type="submit" className='bg-green-700 px-3 py-1 rounded-sm text-white w-full' >
-                Submit
+            <button type="submit" className='bg-green-800 uppercase font-bold p-3 rounded-sm text-white w-full' >
+                Search Trains
             </button>
         </form>
     );
