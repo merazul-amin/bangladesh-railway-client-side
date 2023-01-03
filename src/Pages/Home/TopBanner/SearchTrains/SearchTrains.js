@@ -1,27 +1,30 @@
-import React, { useState } from 'react';
+import React, { forwardRef, useState } from 'react';
 import { useForm } from "react-hook-form";
-import { DayPicker } from 'react-day-picker';
+import DatePicker from "react-datepicker";
+import { addDays } from 'date-fns';
+
+
+
 
 const SearchTrains = () => {
-    //this is for open close the day picker
-    const [isOpen, setIsOpen] = useState(false);
+    // //this is for open close the day picker
+    // const [isOpen, setIsOpen] = useState(false);
 
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const onSubmit = data => console.log(data);
-    const [selectedDate, setSelectedDate] = useState(new Date());
+    const [selectedDate, setSelectedDate] = useState(null);
+
     console.log(selectedDate);
-
-
 
     return (
         <form onSubmit={handleSubmit(onSubmit)} className='w-[95%] lg:mt-12 mx-auto'>
             <div className=''>
-                <div>
+                <div className='mb-2'>
                     <h1>From</h1>
                     <input className='input h-8 rounded-md input-bordered input-info w-full' placeholder='From Station' {...register("from", { required: true })} />
                     {errors.to && <span>This field is required</span>}
                 </div>
-                <div>
+                <div className='mb-2'>
                     <h1>To</h1>
                     <input className='input h-8 rounded-md input-bordered input-info w-[99%] mx-auto' placeholder='To Station' {...register("to", { required: true })} />
                     {/* errors will return when field validation fails  */}
@@ -31,22 +34,31 @@ const SearchTrains = () => {
 
 
             <div className=''>
-                <div className=''>
-                    <h1>Date of Journey</h1>
-                    <input type='date' className='input h-8 rounded-md input-bordered input-info w-[99%] mx-auto' placeholder='Pick A Date' />
 
-                    {/* <div className={`absolute bg-white ${isOpen ? `block` : 'hidden'}`}>
-                        <DayPicker
-                            mode="single"
+                {/* Day picker calender */}
+
+                <div className='mb-2'>
+                    <h1>Date of Journey</h1>
+                    <div className='relative'>
+                        <DatePicker
                             selected={selectedDate}
-                            onSelect={setSelectedDate}
-                            styles={{
-                                caption: { color: 'white', backgroundColor: 'green' }
+                            isClearable
+                            className='input h-8 rounded-md input-bordered input-info bg-transparent disabled w-[99%] mx-auto'
+                            placeholderText="Pick a date"
+                            onKeyDown={(e) => {
+                                e.preventDefault();
                             }}
-                        />
-                    </div> */}
+                            minDate={new Date()}
+                            maxDate={addDays(new Date(), 5)}
+                            onChange={(date) => setSelectedDate(date)} />
+                        {
+                            !selectedDate && <img className='absolute top-2 right-5 -z-10' src="https://d19qjkjk65tfln.cloudfront.net/img/calendar.png" alt="" />
+                        }
+
+                    </div>
                 </div>
-                <div>
+
+                <div className=''>
                     <h1>Choose Class</h1>
                     <select className="input h-8 rounded-md input-bordered input-info w-full">
                         <option disabled selected>Choose Your Class</option>
@@ -55,6 +67,8 @@ const SearchTrains = () => {
                         <option>Snigdha</option>
                     </select>
                 </div>
+
+
             </div>
 
 
@@ -67,4 +81,13 @@ const SearchTrains = () => {
     );
 };
 
+
 export default SearchTrains;
+
+//this is for custom input
+
+const ExampleCustomInput = forwardRef(({ value, onClick }, ref) => (
+    <button className="example-custom-input" onClick={onClick} ref={ref}>
+        {value}
+    </button>
+));

@@ -2,7 +2,7 @@ import React from 'react';
 
 const PaymentLogos = () => {
     return (
-        <div className='w-[90%] mx-auto my-10'>
+        <div className=' my-10'>
             <hr />
 
             {/* payment images for flex design */}
@@ -28,7 +28,7 @@ const PaymentLogos = () => {
 
             {/* Some Text */}
             <div>
-                <h1 className='w-[90%] mx-auto text-center text-green-900 font-bold'>* The Tickets are issued by Bangladesh Railway’s Centrally Computerized Seat Reservation 	&#38; Ticketing System (CCSRTS) and Shohoz-Synesis-Vincen JV is responsible for designing, development, implementation, technical operation 	&#38; maintenance of the system.</h1>
+                <h1 className='w-[90%] mx-auto text-center text-green-900 font-bold mt-10'>* The Tickets are issued by Bangladesh Railway's Centrally Computerized Seat Reservation 	&#38; Ticketing System (CCSRTS) and Shohoz-Synesis-Vincen JV is responsible for designing, development, implementation, technical operation 	&#38; maintenance of the system.</h1>
             </div>
         </div>
     );
