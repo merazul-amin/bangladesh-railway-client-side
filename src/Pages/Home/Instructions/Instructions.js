@@ -4,12 +4,12 @@ const Instructions = () => {
     return (
         <div className='my-10 lg:flex w-[90%] mx-auto'>
             {/* left Img */}
-            <div className='lg:w-[30%] my-10 lg:mt-[140px]'>
+            <div className='lg:w-[35%] my-10 lg:mt-[140px]'>
                 <img src="https://eticket.railway.gov.bd/v2/assets/img/home/instruction-secion-image.png" alt="" />
             </div>
 
             {/* right text */}
-            <div className='lg:w-[70%] lg:ml-9'>
+            <div className='lg:w-[65%] lg:ml-9'>
                 <h1 className='text-green-800 text-2xl font-bold text-center'>Instructions to Purchase Tickets</h1>
                 <div>
                     <p className='text-green-800 text-xl my-2'>
