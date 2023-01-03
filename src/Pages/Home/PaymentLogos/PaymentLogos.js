@@ -6,7 +6,7 @@ const PaymentLogos = () => {
             <hr />
 
             {/* payment images for flex design */}
-            <div className='w-[90%] mx-auto lg:flex lg:-w-[80%] justify-center py-10'>
+            <div className='w-[90%] mx-auto lg:flex lg:-w-[80%] justify-center py-5'>
                 <div>
                     <img className='w-[50px] mx-auto lg:mx-[20px] my-10' src="https://d19qjkjk65tfln.cloudfront.net/v2/assets/img/home/bkash.png" alt="" />
                 </div>
@@ -25,6 +25,11 @@ const PaymentLogos = () => {
                 </div>
             </div>
             <hr />
+
+            {/* Some Text */}
+            <div>
+                <h1 className='w-[90%] mx-auto text-center text-green-900 font-bold'>* The Tickets are issued by Bangladesh Railway’s Centrally Computerized Seat Reservation 	&#38; Ticketing System (CCSRTS) and Shohoz-Synesis-Vincen JV is responsible for designing, development, implementation, technical operation 	&#38; maintenance of the system.</h1>
+            </div>
         </div>
     );
 };
