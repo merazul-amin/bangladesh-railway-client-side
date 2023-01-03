@@ -2,19 +2,38 @@ import React, { forwardRef, useState } from 'react';
 import { useForm } from "react-hook-form";
 import DatePicker from "react-datepicker";
 import { addDays } from 'date-fns';
+import { Navigate, useNavigate } from 'react-router-dom';
 
 
 
 
 const SearchTrains = () => {
-    // //this is for open close the day picker
-    // const [isOpen, setIsOpen] = useState(false);
-
-    const { register, handleSubmit, watch, formState: { errors } } = useForm();
-    const onSubmit = data => console.log(data);
     const [selectedDate, setSelectedDate] = useState(null);
+    const { register, handleSubmit, watch, formState: { errors } } = useForm();
+    const navigate = useNavigate();
 
-    console.log(selectedDate);
+    const onSubmit = data => {
+        const fromStation = data.from;
+        const toStation = data.to;
+        const classOfChair = data.class;
+
+        // if (classOfChair === 'Choose Your Class' || !selectedDate) {
+        //     return
+        // }
+
+        fetch(`http://localhost:5000/searchTrainsResults/search?fromCity=${fromStation}&toCity=${toStation}&doj=${`20`}&class=${classOfChair}`)
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+            })
+
+
+
+
+        console.log(fromStation, toStation, classOfChair, selectedDate);
+
+    };
+
 
     return (
         <form onSubmit={handleSubmit(onSubmit)} className='w-[95%] lg:mt-12 mx-auto'>
@@ -22,13 +41,14 @@ const SearchTrains = () => {
                 <div className='mb-2'>
                     <h1>From</h1>
                     <input className='input h-8 rounded-md input-bordered input-info w-full' placeholder='From Station' {...register("from", { required: true })} />
-                    {errors.to && <span>This field is required</span>}
+                    <p className='text-red-500 font-bold'> {errors.from && <span>From is required</span>}</p>
+
                 </div>
                 <div className='mb-2'>
                     <h1>To</h1>
                     <input className='input h-8 rounded-md input-bordered input-info w-[99%] mx-auto' placeholder='To Station' {...register("to", { required: true })} />
                     {/* errors will return when field validation fails  */}
-                    {errors.to && <span>This field is required</span>}
+                    <p className='text-red-500 font-bold'>{errors.to && <span>To is required</span>}</p>
                 </div>
             </div>
 
@@ -48,6 +68,7 @@ const SearchTrains = () => {
                             onKeyDown={(e) => {
                                 e.preventDefault();
                             }}
+                            dateFormat="dd/MMM/yyyy"
                             minDate={new Date()}
                             maxDate={addDays(new Date(), 5)}
                             onChange={(date) => setSelectedDate(date)} />
@@ -60,12 +81,20 @@ const SearchTrains = () => {
 
                 <div className=''>
                     <h1>Choose Class</h1>
-                    <select className="input h-8 rounded-md input-bordered input-info w-full">
-                        <option disabled selected>Choose Your Class</option>
+                    <select defaultValue={`Choose Your Class`} {...register("class", { required: true })} className="input h-8 rounded-md input-bordered input-info w-full uppercase">
+                        <option disabled >Choose Your Class</option>
                         <option>AC_B</option>
                         <option>AC_S</option>
                         <option>Snigdha</option>
+                        <option>F_Berth</option>
+                        <option>F_Seat</option>
+                        <option>F_Chair</option>
+                        <option>S_Chair</option>
+                        <option>Shovan</option>
+                        <option>Shulov</option>
+                        <option>Ac_Chair</option>
                     </select>
+                    <p className='text-red-500 font-bold'> {errors.class && <span>Class is required</span>}</p>
                 </div>
 
 
