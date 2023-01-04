@@ -12,12 +12,10 @@ const routes = createBrowserRouter([
         children: [
             { path: '/', element: <Home></Home> },
             {
-                path: '/',
-                element: <SearchTrainResults></SearchTrainResults>,
-                loader: ({ }) => {
-
-                }
+                path: `/searchTrainsResults/search`,
+                element: <SearchTrainResults></SearchTrainResults>
             }
+
         ]
     },
 ]);

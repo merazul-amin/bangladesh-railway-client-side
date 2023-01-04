@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import DatePicker from "react-datepicker";
 import { addDays } from 'date-fns';
 import { Navigate, useNavigate } from 'react-router-dom';
-
+import { format } from 'date-fns'
 
 
 
@@ -20,17 +20,15 @@ const SearchTrains = () => {
         // if (classOfChair === 'Choose Your Class' || !selectedDate) {
         //     return
         // }
+        const date = format(selectedDate, 'P')
 
-        fetch(`http://localhost:5000/searchTrainsResults/search?fromCity=${fromStation}&toCity=${toStation}&doj=${`20`}&class=${classOfChair}`)
-            .then(res => res.json())
-            .then(data => {
-                console.log(data)
-            })
+        navigate(`/searchTrainsResults/search?fromCity=${fromStation}&toCity=${toStation}&doj=${date}&class=${classOfChair}`)
 
 
 
 
-        console.log(fromStation, toStation, classOfChair, selectedDate);
+
+        console.log(fromStation, toStation, classOfChair, date);
 
     };
 
