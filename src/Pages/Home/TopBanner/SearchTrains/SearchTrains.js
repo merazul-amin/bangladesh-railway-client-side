@@ -24,12 +24,6 @@ const SearchTrains = () => {
 
         navigate(`/searchTrainsResults/search?fromCity=${fromStation}&toCity=${toStation}&doj=${date}&class=${classOfChair}`)
 
-
-
-
-
-        console.log(fromStation, toStation, classOfChair, date);
-
     };
 
 
