@@ -22,13 +22,13 @@ const DisclaimarModal = () => {
     });
 
     const toggleDrawer = (anchor, open) => (event) => {
-        // if (
-        //     event &&
-        //     event.type === 'keydown' &&
-        //     (event.key === 'Tab' || event.key === 'Shift')
-        // ) {
-        //     return;
-        // }
+        if (
+            event &&
+            event.type === 'keydown' &&
+            (event.key === 'Tab' || event.key === 'Shift')
+        ) {
+            return;
+        }
 
         setState({ ...state, [anchor]: open });
     };
@@ -36,8 +36,11 @@ const DisclaimarModal = () => {
 
     useEffect(() => {
         setTimeout(() => {
-            toggleDrawer('bottom', true)
-            console.log('Hello');
+            const isVisited = sessionStorage.getItem('visitedToday');
+            if (!isVisited) {
+                setState({ ...state, bottom: true })
+                sessionStorage.setItem('visitedToday', true);
+            }
         }, 2000);;
     }, [])
 
