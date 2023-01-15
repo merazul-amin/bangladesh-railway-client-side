@@ -25,7 +25,7 @@ const routes = createBrowserRouter([
                         let pair = paramsArray[i].split('=')[1];
                         paramsArray[i] = pair;
                     }
-                    return fetch(`http://localhost:5000/searchTrainsResults/search?from=${paramsArray[0]}&to=${paramsArray[1]}&doj=${paramsArray[2]}&class=${paramsArray[3]}`)
+                    return fetch(`https://railway-server-side.vercel.app/searchTrainsResults/search?from=${paramsArray[0]}&to=${paramsArray[1]}&doj=${paramsArray[2]}&class=${paramsArray[3]}`)
                 }
             }
 
