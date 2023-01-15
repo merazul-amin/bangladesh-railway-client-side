@@ -2,14 +2,6 @@ import React, { useEffect, useState } from 'react';
 import Box from '@mui/material/Box';
 import SwipeableDrawer from '@mui/material/SwipeableDrawer';
 import Button from '@mui/material/Button';
-import List from '@mui/material/List';
-import Divider from '@mui/material/Divider';
-import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import MailIcon from '@mui/icons-material/Mail';
 import { AiOutlineInfoCircle } from "react-icons/ai";
 
 const DisclaimarModal = () => {
@@ -77,7 +69,7 @@ const DisclaimarModal = () => {
             {['bottom'].map((anchor) => (
                 <React.Fragment key={anchor}>
 
-                    <Button onClick={toggleDrawer(anchor, true)}>{anchor}</Button>
+                    {/* <Button onClick={toggleDrawer(anchor, true)}>{anchor}</Button> */}
                     <SwipeableDrawer
                         anchor={anchor}
                         open={state[anchor]}

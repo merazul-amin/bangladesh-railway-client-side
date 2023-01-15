@@ -1,27 +1,18 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import { useLoaderData } from 'react-router-dom';
+import { LoadingContext } from '../../contexts/LoadingModalContext';
+import TopSearchInfo from './TopSearchInfo/TopSearchInfo';
 
 const SearchTrainResults = () => {
-    const [searchInfo, setSearchInfo] = useState([]);
-    //get the to station, from station time etc by useEffect
-    useEffect(() => {
-        //this all for get the four query params from url
-        const url = document.URL;
-        const params = url.split('?')[1];
-        let paramsArray = params.split('&');
-        for (let i = 0; i < paramsArray.length; i++) {
-            let pair = paramsArray[i].split('=')[1];
-            paramsArray[i] = pair;
-        }
-        setSearchInfo(paramsArray);
-    }, [])
+    const { open, setOpen, handleClose, handleOpen } = useContext(LoadingContext);
 
-    //now get the train information from server 
+    handleClose();
+    const trainInfo = useLoaderData();
 
-
-    console.log(searchInfo);
+    console.log(trainInfo);
     return (
         <div>
-            <h1>Search Trains Results</h1>
+            <TopSearchInfo from={trainInfo.from} to={trainInfo.to} date={trainInfo.doj}></TopSearchInfo>
         </div>
     );
 };

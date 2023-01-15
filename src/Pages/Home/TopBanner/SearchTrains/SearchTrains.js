@@ -1,13 +1,15 @@
-import React, { forwardRef, useState } from 'react';
+import React, { forwardRef, useContext, useState } from 'react';
 import { useForm } from "react-hook-form";
 import DatePicker from "react-datepicker";
 import { addDays } from 'date-fns';
 import { Navigate, useNavigate } from 'react-router-dom';
 import { format } from 'date-fns'
+import { LoadingContext } from '../../../../contexts/LoadingModalContext';
 
 
 
 const SearchTrains = () => {
+    const { open, setOpen, handleClose, handleOpen } = useContext(LoadingContext);
     const [selectedDate, setSelectedDate] = useState(null);
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const navigate = useNavigate();
@@ -16,12 +18,12 @@ const SearchTrains = () => {
         const fromStation = data.from;
         const toStation = data.to;
         const classOfChair = data.class;
-
+        handleOpen();
         // if (classOfChair === 'Choose Your Class' || !selectedDate) {
         //     return
         // }
-        const date = format(selectedDate, 'P')
-
+        console.log(open);
+        const date = format(selectedDate, 'P');
         navigate(`/searchTrainsResults/search?fromCity=${fromStation}&toCity=${toStation}&doj=${date}&class=${classOfChair}`)
 
     };

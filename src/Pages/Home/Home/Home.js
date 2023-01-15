@@ -1,4 +1,5 @@
 import React from 'react';
+import LoadingSpinner from '../../SharedPages/LoadingSpinner/LoadingSpinner';
 import DisclaimarModal from '../DisclaimarModal/DisclaimarModal';
 import Facilities from '../Facilities/Facilities';
 import Instructions from '../Instructions/Instructions';
@@ -10,6 +11,7 @@ const Home = () => {
     return (
         <div className=''>
             <DisclaimarModal></DisclaimarModal>
+            <LoadingSpinner></LoadingSpinner>
             <TopBanner></TopBanner>
             <TotalTicketsAndUser></TotalTicketsAndUser>
             <Facilities></Facilities>
