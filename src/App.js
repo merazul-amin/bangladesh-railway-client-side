@@ -5,9 +5,11 @@ import "react-datepicker/dist/react-datepicker.css";
 function App() {
   return (
     <>
-      <RouterProvider router={routes}>
+      <div className='max-w-[1400px] mx-auto'>
+        <RouterProvider router={routes}>
 
-      </RouterProvider>
+        </RouterProvider>
+      </div>
     </>
   );
 }

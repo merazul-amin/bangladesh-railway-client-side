@@ -22,9 +22,10 @@ const SearchTrains = () => {
         // if (classOfChair === 'Choose Your Class' || !selectedDate) {
         //     return
         // }
-        console.log(open);
-        const date = format(selectedDate, 'P');
-        navigate(`/searchTrainsResults/search?fromCity=${fromStation}&toCity=${toStation}&doj=${date}&class=${classOfChair}`)
+        const date = format(selectedDate, 'PP');
+        const dateArr = date.split(' ');
+        const modifiedDate = dateArr[1].split(',')[0] + '-' + dateArr[0] + '-' + dateArr[2];
+        navigate(`/searchTrainsResults/search?fromCity=${fromStation}&toCity=${toStation}&doj=${modifiedDate}&class=${classOfChair}`)
 
     };
 
