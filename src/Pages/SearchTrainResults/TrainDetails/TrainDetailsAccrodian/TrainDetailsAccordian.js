@@ -21,23 +21,40 @@ const TrainDetailsAccordian = () => {
                         expandIcon={<ExpandMoreIcon />}
                         aria-controls="panel1bh-content"
                         id="panel1bh-header"
+                        sx={{ border: '' }}
                     >
                         <Typography sx={{ width: '33%', flexShrink: 0 }}>
-                            Train Name and code
+                            <h1 className='text-orange-400 uppercase text-xl font-bold'>
+                                Train Name and code
+
+                            </h1>
                         </Typography>
                         {/* <Typography sx={{ color: 'text.secondary' }}>I am an accordion</Typography> */}
                     </AccordionSummary>
-
-                    <AccordionDetails>
-                        <h1>Details of Train</h1>
+                    <AccordionDetails
+                        sx={{ marginTop: '2px', borderTop: '1px solid gray' }}
+                    >
+                        <h1 >Details of Train</h1>
                         {/* Top Time estimate */}
+                        <div>
+                            {/* Journey Start */}
+                            <div>
+
+                            </div>
+                            {/* Journey Route */}
+                            <div>
+
+                            </div>
+                            {/* Journey End */}
+                        </div>
+                        {/* Bottom tickets name */}
                         <div>
 
                         </div>
                     </AccordionDetails>
                 </Accordion>
             </div>
-        </div>
+        </div >
     );
 };
 

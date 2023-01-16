@@ -26,7 +26,7 @@ const Navbar = () => {
                         <ul className='lg:flex justify-around w-[90%] align-middle mx-auto text-xl'>
                             <li><NavLink to='/'>Home</NavLink></li>
                             <li><NavLink to='/'>Login</NavLink></li>
-                            <li><NavLink to='/'>Register</NavLink></li>
+                            <li><NavLink to='/register'>Register</NavLink></li>
                             <li><NavLink to='/'>Train Information</NavLink></li>
                             <li><NavLink to='/'>Contact Us</NavLink></li>
                         </ul>
@@ -51,7 +51,7 @@ const Navbar = () => {
                 <ul className='text-white font-bold '>
                     <li className='bg-green-600 block mb-[1px] p-5'><NavLink to='/'>Home</NavLink></li>
                     <li className='bg-green-600 w-full mb-[1px] p-5'><NavLink to='/'>Login</NavLink></li>
-                    <li className='bg-green-600 w-full mb-[1px] p-5'><NavLink to='/'>Register</NavLink></li>
+                    <li className='bg-green-600 w-full mb-[1px] p-5'><NavLink to='/register'>Register</NavLink></li>
                     <li className='bg-green-600 w-full mb-[1px] p-5'><NavLink to='/'>Train Information</NavLink></li>
                     <li className='bg-green-600 w-full mb-[1px] p-5'><NavLink to='/'>Contact Us</NavLink></li>
                 </ul>
