@@ -4,6 +4,7 @@ import {
 } from "react-router-dom";
 import Main from "../Layout/Main";
 import Home from "../Pages/Home/Home/Home";
+import LogIn from "../Pages/LogIn/LogIn";
 import Register from "../Pages/Register/Register";
 import SearchTrainResults from "../Pages/SearchTrainResults/SearchTrainResults";
 
@@ -26,13 +27,14 @@ const routes = createBrowserRouter([
                         let pair = paramsArray[i].split('=')[1];
                         paramsArray[i] = pair;
                     }
-                    return fetch(`http://localhost:5000/searchTrainsResults/search?from=${paramsArray[0]}&to=${paramsArray[1]}&doj=${paramsArray[2]}&class=${paramsArray[3]}`)
+                    return fetch(`https://railway-server-side.vercel.app/searchTrainsResults/search?from=${paramsArray[0]}&to=${paramsArray[1]}&doj=${paramsArray[2]}&class=${paramsArray[3]}`)
                 }
             },
             { path: '/register', element: <Register></Register> }
 
         ]
     },
+    { path: '/login', element: <LogIn></LogIn> }
 ]);
 
 

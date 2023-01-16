@@ -25,7 +25,7 @@ const Navbar = () => {
                     <div className='hidden lg:block lg:w-[70%] mt-5 lg:ml-40 mr-0'>
                         <ul className='lg:flex justify-around w-[90%] align-middle mx-auto text-xl'>
                             <li><NavLink to='/'>Home</NavLink></li>
-                            <li><NavLink to='/'>Login</NavLink></li>
+                            <li><NavLink to='/login'>Login</NavLink></li>
                             <li><NavLink to='/register'>Register</NavLink></li>
                             <li><NavLink to='/'>Train Information</NavLink></li>
                             <li><NavLink to='/'>Contact Us</NavLink></li>
@@ -50,7 +50,7 @@ const Navbar = () => {
             <div className={`lg:hidden w-full mt-[80px] absolute ${isOpen ? `top-0` : `top-[-500px]`} duration-500`}>
                 <ul className='text-white font-bold '>
                     <li className='bg-green-600 block mb-[1px] p-5'><NavLink to='/'>Home</NavLink></li>
-                    <li className='bg-green-600 w-full mb-[1px] p-5'><NavLink to='/'>Login</NavLink></li>
+                    <li className='bg-green-600 w-full mb-[1px] p-5'><NavLink to='/login'>Login</NavLink></li>
                     <li className='bg-green-600 w-full mb-[1px] p-5'><NavLink to='/register'>Register</NavLink></li>
                     <li className='bg-green-600 w-full mb-[1px] p-5'><NavLink to='/'>Train Information</NavLink></li>
                     <li className='bg-green-600 w-full mb-[1px] p-5'><NavLink to='/'>Contact Us</NavLink></li>
