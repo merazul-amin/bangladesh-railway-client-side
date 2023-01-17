@@ -18,6 +18,9 @@ const TrainDetails = () => {
                 </div>
 
             </div>
+
+
+
             {/* Right Side */}
             <div className='hidden lg:block lg:w-[30%]'>
                 <div className='relative'>

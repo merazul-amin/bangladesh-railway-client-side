@@ -1,8 +1,7 @@
 import React, { useContext } from 'react';
 import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
 import Modal from '@mui/material/Modal';
-import { ColorRing } from 'react-loader-spinner'
+import { ThreeDots } from 'react-loader-spinner'
 import { LoadingContext } from '../../../contexts/LoadingModalContext';
 
 const style = {
@@ -11,10 +10,10 @@ const style = {
     left: '50%',
     transform: 'translate(-50%, -50%)',
     width: 400,
-    bgcolor: 'background.paper',
-    border: '2px solid #000',
-    boxShadow: 24,
-    p: 4,
+    // bgcolor: 'background.paper',
+    // border: '2px solid #000',
+    // boxShadow: 24,
+    // p: 4,
 };
 
 const LoadingSpinner = () => {
@@ -30,14 +29,15 @@ const LoadingSpinner = () => {
                 >
                     <Box sx={style}>
                         <div className='w-[30%] mx-auto'>
-                            <ColorRing
-                                visible={true}
-                                height="90"
-                                width="90"
-                                ariaLabel="blocks-loading"
+                            <ThreeDots
+                                height="500"
+                                width="500"
+                                radius="9"
+                                color="#4fa94d"
+                                ariaLabel="three-dots-loading"
                                 wrapperStyle={{}}
-                                wrapperClass="blocks-wrapper"
-                                colors={['#e15b64', '#f47e60', '#f8b26a', '#abbd81', '#849b87']}
+                                wrapperClassName=""
+                                visible={true}
                             />
                         </div>
                     </Box>
