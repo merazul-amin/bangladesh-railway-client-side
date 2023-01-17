@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { FiAlignJustify } from "react-icons/fi";
 import { ImCross } from "react-icons/im";
+import './Navbar.css';
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
     return (
@@ -22,13 +23,15 @@ const Navbar = () => {
 
 
                     {/* Navlinks for large display*/}
-                    <div className='hidden lg:block lg:w-[70%] mt-5 lg:ml-40 mr-0'>
+                    <div className='navCont hidden lg:block lg:w-[70%] mt-5 lg:ml-40 mr-0'>
                         <ul className='lg:flex justify-around w-[90%] align-middle mx-auto text-xl'>
-                            <li><NavLink to='/'>Home</NavLink></li>
+                            <li><NavLink className={`${({ isActive }) =>
+                                isActive ? 'active' : 'navLink'}`
+                            } to='/'>Home</NavLink></li>
                             <li><NavLink to='/login'>Login</NavLink></li>
                             <li><NavLink to='/register'>Register</NavLink></li>
-                            <li><NavLink to='/'>Train Information</NavLink></li>
-                            <li><NavLink to='/'>Contact Us</NavLink></li>
+                            <li><NavLink to='/trainInfo'>Train Information</NavLink></li>
+                            <li><NavLink to='/contactUs'>Contact Us</NavLink></li>
                         </ul>
                     </div>
 

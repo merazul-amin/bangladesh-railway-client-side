@@ -1,0 +1,24 @@
+.active {
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.active::after {
+    content: "";
+    height: 4px;
+    background-color: rgb(53, 170, 53);
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    transition: .5s;
+    width: 100%;
+}
+
+.navCont ul li:hover {
+    text-decoration: underline;
+    text-underline-offset: 5.5px;
+    text-decoration-color: orangered;
+    text-decoration-thickness: 4px;
+}

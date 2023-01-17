@@ -40,7 +40,6 @@ const DisclaimarModal = () => {
         <Box
             sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 250 }}
             role="presentation"
-
             onKeyDown={toggleDrawer(anchor, false)}
         >
             <div className='w-[90%] mx-auto py-10'>
